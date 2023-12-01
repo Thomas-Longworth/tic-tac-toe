@@ -3,7 +3,7 @@ import { useState, useContext } from 'react'
 import { GameContext } from '../App'
 const CheckWin = () => {
     const {gameBoard, setGameBoard} = useContext(GameContext)
-    const [winner,setWinner]=useState("text")
+    const [winner,setWinner]=useState("")
     const handleReset = () => {
 		console.log("reset game")
 		setWinner("")
@@ -44,7 +44,7 @@ const CheckWin = () => {
 
   return (
     <>
-     <div>CheckWin</div>
+    
      {winner}
 	
 	 <button onClick={handleReset}>Reset game</button>

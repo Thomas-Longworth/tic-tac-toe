@@ -3,17 +3,17 @@ import { useState, useContext } from 'react'
 import { GameContext } from '../App'
 
 const Board = () => {
-	
 
 
-    const {gameBoard, setGameBoard} = useContext(GameContext)
-	const{playerX, setPlayerX}=useContext(GameContext)
+
+	const { gameBoard, setGameBoard } = useContext(GameContext)
+	const { playerX, setPlayerX } = useContext(GameContext)
 
 
 	const handleClick = (index) => {
-   
+
 		let newBoard
-		if(playerX){
+		if (playerX) {
 			newBoard = gameBoard.map((digit, i) => {
 				return i === index ? "X" : digit;
 			})
@@ -24,7 +24,7 @@ const Board = () => {
 			})
 
 		}
-		
+
 		setGameBoard(newBoard)
 		setPlayerX(!playerX)
 	}
@@ -33,19 +33,28 @@ const Board = () => {
 
 
 
-		<><div className='container'>
-			<h1>Player {playerX?"X":"o"}:Turn</h1>
+		<>
+			<div className='container-sm mx-auto '>
+			
+						<div className='container'>
+							<h1>Player {playerX ? "X" : "O"}:Turn</h1>
 
-		</div>
-			<div className='container mx-auto'>
-				<div className='row justify-content-center '>
-					{gameBoard.map((digit, index) => (
-						<div className='col-4  text-center boxes' key={index}>
-							
-							<button className="game-buttons" disabled={gameBoard[index]==="X"||gameBoard[index]==="O"}  onClick={() => handleClick(index)}>{digit}</button>
 						</div>
-					))}
-				</div>
+					
+				 <div className='row justify-content-center '>
+						{gameBoard.map((digit, index) => (
+							<div className='col-4  text-center boxes' key={index}>
+
+								<button className="game-buttons" disabled={gameBoard[index] === "X" || gameBoard[index] === "O"} onClick={() => handleClick(index)}>{digit}</button>
+							</div>
+						))}
+					</div>
+
+
+			
+
+
+
 			</div>
 		</>
 	)
