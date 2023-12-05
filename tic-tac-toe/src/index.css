@@ -1,12 +1,19 @@
+#root {
+  background-color:black;
+  color: antiquewhite;
+}
+html {
+  background-color: black;
 
-
+}
 .game-buttons{ 
   width: 100%;
   color: black;
 
   height: 150px;
-  font-size: xx-large;
-  background-color: white;
+  font-size: 75px;
+  font-weight:  600;
+
   border: none;
 }
 .boxes {

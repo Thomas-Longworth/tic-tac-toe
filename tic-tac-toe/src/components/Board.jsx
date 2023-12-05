@@ -8,6 +8,7 @@ const Board = () => {
 
 	const { gameBoard, setGameBoard } = useContext(GameContext)
 	const { playerX, setPlayerX } = useContext(GameContext)
+	const { winner} = useContext(GameContext)
 
 
 	const handleClick = (index) => {
@@ -36,16 +37,16 @@ const Board = () => {
 		<>
 			<div className='container-sm mx-auto '>
 			
-						<div className='container'>
+						<div className='row'>
 							<h1>Player {playerX ? "X" : "O"}:Turn</h1>
 
 						</div>
 					
-				 <div className='row justify-content-center '>
+				 <div className='row justify-content-center bg-warning'>
 						{gameBoard.map((digit, index) => (
-							<div className='col-4  text-center boxes' key={index}>
+							<div className='col-4  text-center boxes bg-warning' key={index}>
 
-								<button className="game-buttons" disabled={gameBoard[index] === "X" || gameBoard[index] === "O"} onClick={() => handleClick(index)}>{digit}</button>
+								<button className="game-buttons bg-warning" disabled={gameBoard[index] === "X" || gameBoard[index] === "O"} onClick={() => handleClick(index)}>{digit}</button>
 							</div>
 						))}
 					</div>
