@@ -9,12 +9,16 @@ html {
 .game-buttons{ 
   width: 100%;
   color: black;
+  
 
   height: 150px;
   font-size: 75px;
   font-weight:  600;
 
   border: none;
+}
+.game-buttons:hover {
+ 
 }
 .boxes {
   border-bottom: 1px black solid;
@@ -23,6 +27,14 @@ html {
 
  
 }
-.main-box {
+.boxes:hover {
+  scale: 1.1;
+
   
+}
+.game-btn {
+  font-size: 35px;
+  color: red;
+  background-color: blue;
+  width: 100%;
 }

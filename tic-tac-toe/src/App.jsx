@@ -26,9 +26,19 @@ function App() {
                 <div className='container-sm mx-auto '>
                     <div className='row'>
                         <div className='col-4 border'>
+                           
 
-                            <CheckWin/>
+                        
                             <Scores/>
+                         
+                           
+                            <div className='row'>{winner==="draw"?<h2>Game is a draw</h2>:<h2></h2>}</div>
+                            <div className='row'>{winner==="X"?<h2>Player 1 has won!</h2>:<h2></h2>}</div>
+                            <div className='row'>{winner==="O"?<h2>Player 2 has won!</h2>:<h2></h2>}</div>
+                            <CheckWin/>
+                       
+                     
+                          
                            
                             </div>
                         <div className='col-8 border'>

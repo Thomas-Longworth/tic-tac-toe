@@ -7,12 +7,14 @@ const CheckWin = () => {
 	const {winningPattern,setWinningPattern}=useContext(GameContext)
 	const {player1Score,setPlayer1Score}=useContext(GameContext)
     const {player2Score,setPlayer2Score}=useContext(GameContext)
+    const { playerX, setPlayerX } = useContext(GameContext)
   
 
     const handleReset = () => {
 		console.log("reset game")
 		setWinner("")
 		setGameBoard(["", "","","","","","","",""])
+        setPlayerX(true)
 	}
     const patterns = [
         [0,1,2],
@@ -49,6 +51,7 @@ const CheckWin = () => {
         }
         return null;
     }
+   
     useEffect(() => {
         console.log("use e ran")
 		console.log(winningPattern)
@@ -58,11 +61,11 @@ const CheckWin = () => {
 
   return (
     <>
-	{winner}
+
     
-     {winner==="X"?<h3>hellow world x</h3>:<h2></h2>}
+  
 	
-	 <button onClick={handleReset}>Start/Reset game</button>
+	 <button className='btn btn-primary' onClick={handleReset}>Start game</button>
 
   
     </>

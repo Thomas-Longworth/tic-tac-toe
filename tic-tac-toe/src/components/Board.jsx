@@ -35,28 +35,29 @@ const Board = () => {
 
 
 		<>
-			<div className='container-sm mx-auto '>
+		<div className='container-sm mx-auto '>
 			
-						<div className='row'>
-							<h1>Player {playerX ? "X" : "O"}:Turn</h1>
-
-						</div>
-					
-				 <div className='row justify-content-center bg-warning'>
-						{gameBoard.map((digit, index) => (
-							<div className='col-4  text-center boxes bg-warning' key={index}>
-
-								<button className="game-buttons bg-warning" disabled={gameBoard[index] === "X" || gameBoard[index] === "O"} onClick={() => handleClick(index)}>{digit}</button>
-							</div>
-						))}
-					</div>
-
-
-			
-
-
+			<div className='row'>
+				<h1>Player {playerX ? "1" : "2"}</h1>
 
 			</div>
+		
+	 <div className='row justify-content-center bg-warning'>
+			{gameBoard.map((digit, index) => (
+				<div className='col-4  text-center boxes bg-warning' key={index}>
+
+					<button className="game-buttons bg-warning" disabled={gameBoard[index] === "X" || gameBoard[index] === "O"|| winner !==""} onClick={() => handleClick(index)}>{digit}</button>
+				</div>
+			))}
+		</div>
+
+
+
+
+
+
+</div>
+			
 		</>
 	)
 }
